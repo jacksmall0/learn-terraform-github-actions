@@ -1,5 +1,6 @@
 terraform {
-  requprovider "aws" {
+
+  required provider "aws" {
   region                      = "us-west-2"
   access_key                  = "mock_access_key"
   secret_key                  = "mock_secret_key"
@@ -31,16 +32,17 @@ terraform {
     ec2            = "http://localhost:4566"
   }
 }
-    }
+  }
     random = {
       source  = "hashicorp/random"
       version = "3.0.1"
     }
-  }
+  
   required_version = ">= 1.1.0"
 
+  terraform {
   cloud {
-    organization = "jacksmall0/learn-terraform-github-actions"
+    organization = "small_011"
 
     workspaces {
       name = "gh-actions-demo"
